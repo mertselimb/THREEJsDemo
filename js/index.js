@@ -10,6 +10,14 @@ var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+window.addEventListener('resize', _ => {
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    renderer.setSize(width, height);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+})
+
 var geometry = new THREE.BoxGeometry(1, 1, 1);
 var materialRed = new THREE.MeshLambertMaterial({ color: 0xcccc00 });
 var materialGreen = new THREE.MeshLambertMaterial({ color: 0x202020 });
