@@ -33,20 +33,20 @@ arrCoords.forEach(x => {
 
     scene.add(r);
     scene.add(g);
-    scene.add(b);
+    //scene.add(b);
 
     r.position.y = y;
-    g.position.y = y;
-    b.position.y = y;
+    g.position.y = y+1;
+    b.position.y = y+1;
     r.position.x = x;
-    g.position.x = x;
+    g.position.x = x+1;
     b.position.x = x;
 
     cubes.push({ r, g, b });
   });
 });
 
-camera.position.z = 15;
+camera.position.z = 8;
 mul = 1;
 rotation = 0.01;
 
